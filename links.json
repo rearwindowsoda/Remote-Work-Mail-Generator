@@ -1,0 +1,86 @@
+[
+  {
+    "link": "https://asrlicznik.ct8.pl/",
+    "desc": "Licznik ASR"
+  },
+  {
+    "link": "http://release.tla-corrector-ui.app.psmm.pl/",
+    "desc": "TLA / TOLA"
+  },
+	{
+    "link": "https://mail.google.com/chat/",
+    "desc": "Google Chat"
+  },
+	{
+    "link": "https://docs.google.com/spreadsheets/d/1VZ938pU5alpCs_znKKDBxdAUanbFCEnW8XVEhrcIzUg/edit#gid=0",
+    "desc": "Ewidencja Gazet"
+  },
+	{
+    "link": "https://docs.google.com/document/d/1luarXSzAAmorZOqh0ZyMTPGWJc5h7mU08osOvDwz-Oc/edit",
+    "desc": "Nadawanie dat"
+  },
+	{
+    "link": "http://regiony.ditto.net.pl/adm/index.php?action=dzialy&mod=dodaj",
+    "desc": "Dodawanie dodatków"
+  },
+	{
+    "link": "https://sites.google.com/psmm.pl/witaj-w-psmm/strona-g%C5%82%C3%B3wna",
+    "desc": "Portal szkoleniowy"
+  },
+	{
+    "link": "http://helper.ditto.net.pl/#/diffs/24",
+    "desc": "Ditto Helper"
+  },
+	{
+    "link": "https://sites.google.com/psmm.pl/kodowanie-zaawansowane-final/strona-g%C5%82%C3%B3wna",
+    "desc": "Kodowanie zaawansowane - instrukcja"
+  },
+	{
+    "link": "http://download.ditto.net.pl/beta/ditto/",
+    "desc": "Ditto.net Beta Download"
+  },
+	{
+    "link": "http://download.ditto.net.pl/nightly/ditto/",
+    "desc": "Ditto.net Nightly Download"
+  },
+	{
+    "link": "http://download.app.psmm.pl/dittoav.release/",
+    "desc": "Ditto.AV Release Download"
+  },
+	{
+    "link": "http://download.app.psmm.pl/dittoav.prerelease",
+    "desc": "Ditto.AV Prerelease Download"
+  },
+	{
+    "link": "https://docs.google.com/forms/d/e/1FAIpQLSfV5m2iGFsteg5xBUO4muO81tDngCCF1_SUf9BZVRj3_VszJA/viewform?fbzx=1193824603542797960",
+    "desc": "Dodatkowe punkty ASR - formularz"
+  },
+	{
+    "link": "https://docs.google.com/spreadsheets/d/14OHBI00DBPequIiLGplxnKBY6jhCmuHwjwXjbJkOY6U/edit#gid=1399738960",
+    "desc": "Ramówki RTV"
+  },
+	{
+    "link": "https://docs.google.com/document/d/1xZCMXag_FBpm6r7vZZolPI0Op3tR2lJlkLvKnnDXuB0/edit#heading=h.hufsqny7viz1",
+    "desc": "Instrukcja - prawidłowy podział segmentów ASR"
+  },
+	{
+    "link": "https://docs.google.com/spreadsheets/d/1rHZI0lXsrja5bs-KfMpEvm-GOzf3ZbTMY6SSoel4QCI/edit#gid=1366848723",
+    "desc": "Wycinanie - materiały do usunięcia (tabela)"
+  },
+	{
+    "link": "https://intranet.psmm.pl/login/",
+    "desc": "Nowy Intranet"
+  },
+	{
+    "link": "https://intranet.press-service.com.pl",
+    "desc": "Stary Intranet"
+  },
+	{
+    "link": "https://docs.google.com/forms/d/e/1FAIpQLSc4f4ba2sy5EeJps95PBahs2G8bytSGShTmyzbR0778VKeUWw/viewform",
+    "desc": "Wniosek urlopowy"
+  },
+	{
+    "link": "http://inforia-admin.lan.psmm.pl/Home.mvc",
+    "desc": "Wycinanie - manager"
+  }
+]

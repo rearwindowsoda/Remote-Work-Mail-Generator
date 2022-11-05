@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praca zdalna - generator maili</title>
+    <script defer src="script.js"></script>
+    <script defer src="conversion_time.js"></script>
+    <script defer src="clipboard.js"></script>
+    <script type="module">
+      import getLinks from './links.js'
+      import refreshPage from './refresh.js';
+      import {showNote} from './notes.js';
+      getLinks();
+      showNote();
+      refreshPage();
+    </script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css">
+    <link rel="shortcut icon" href="src/favicon.ico" type="image/x-icon">
+    <style>
+      #send-link-start>a, #send-link-end > a {
+        display: inline-block;
+        margin: 3% 0 3% 0;
+        padding: 2%;
+        background-color: #e5e5e5;
+        border-radius: 3%;
+        border: 1px solid rgb(2, 27, 59);
+        color:  rgb(2, 27, 59);
+        
+      }
+
+      #send-link-start>a:hover, #send-link-end >a:hover {
+        background-color: rgba(107, 58, 107, 0.151);
+        text-decoration: none;
+        cursor: alias;
+        transform: scale(102%);
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div id="wrap">
+      <div class="hero-unit">
+        <h1>Remote PSMM</h1>
+        <p>Zebrałem najpotrzebniejsze linki do naszej pracy zdalnej. Dodatkowo strona pozwala na półautomatyczne generowanie treści maili wysyłanych na koniec i początek pracy, a także na zliczanie minut konwersji i tworzenia krótkich notatek.</p>
+        <p>Data w treściach maili zmienia się automatycznie po północy, licznik konwersji i notatka zapisywane są w pamięci przeglądarki i będą dalej widoczne po odświeżeniu strony, wyłączeniu przeglądarki, restarcie komputera (aż do manualnego usunięcia). ✨</p>
+        <p>Kliknij w przycisk poniżej, żeby obejrzeć instrukcję korzystania ze strony.</p>
+        <p><a href="#video" class="btn btn-primary btn-small">Zobacz instrukcję »</a></p>
+        <p>Lub przejdź do innej mojej aplikacji, licznika ASR</p>
+        <p><a href="http://asrlicznik.ct8.pl" class="btn btn-info btn-small" target="_blank">Przejdź tutaj »</a> </p>
+      </div>
+      <div><h2>Rozpoczęcie pracy zdalnej</h2>
+        <p class="subject">Temat maila: Rozpoczęcie pracy zdalnej - <span class="work-start-date"></span> r. - <span class="your-name"></span></p>
+        <article id="start-mail">
+          Dzień dobry,<br />
+          informuję o rozpoczęciu pracy zdalnej w dniu:
+          <span class="work-start-date"></span> r.
+          <br />
+          Godzina rozpoczęcia: <span id="hour-start-mail"></span>
+          <br />
+          Łączę wyrazy szacunku, <br />
+          <span class="your-name"></span>
+          
+            <form id="inject-form">
+              <label
+                >Twoje imię:
+                <input type="text" name="name" placeholder="Your name" />
+              </label>
+              <label>
+                Godzina rozpoczęcia pracy:
+                <input type="text" name="hour-start" placeholder="21:00" />
+              </label>
+              <label>
+                Adres e-mail lidera zmiany:
+                <input type="text" name="leader-mail-start" />
+              </label>
+              <button type="submit">Generuj treść maila</button>
+            </form>
+            <button onclick="copyToClipboard('start-mail')">Kopiuj do schowka</button>
+            <p id="send-link-start"></p>
+        </article></div>
+      
+    <div>     
+      <h2>Zakończenie pracy zdalnej</h2>
+      <p class="subject">Temat maila: Zakończenie pracy zdalnej - <span class="work-end-date"></span> r. - <span class="your-name-end"></span></p>
+      <article id="end-mail">
+      Dzień dobry,<br />
+      informuję o zakończeniu pracy zdalnej w dniu:
+      <span class="work-end-date"></span> r.
+      <br />
+      Godziny pracy: <span id="hour-end-mail"></span>
+      <br />
+      <span id="conversion"></span>
+      Łączę wyrazy szacunku, <br />
+      <span class="your-name-end"></span>
+      <form id="inject-form-end">
+        <label
+          >Twoje imię:
+          <input type="text" name="name-end" placeholder="Your name" />
+        </label>
+        <label>
+          Godziny pracy:
+          <input type="text" name="hour-end" placeholder="21:00-05:00" />
+        </label>
+        <label>
+          Czas konwersji:
+          <input
+            type="text"
+            name="conversion"
+            id="conversion-mail-input"
+          />
+        </label>
+        <label>
+          Adres e-mail lidera zmiany:
+          <input type="text" name="leader-mail-end" />
+        </label>
+        <button type="submit">Generuj treść maila</button>
+      </form>
+      <button onclick="copyToClipboard('end-mail')">Kopiuj do schowka</button>
+      <p id="send-link-end"></p>
+        </div>
+      </article>
+      <div>
+        <h2>
+          Konwersja
+        </h2>
+        <article>
+        
+        
+          <p class="subject"><strong>Całkowity czas konwersji: <span id="conversion-sum-span"></span></strong></p>
+          <p>Dodaj liczbę minut konwersji</p>
+          <form id="add-minutes-form">
+            <input type="number" required min="1" id="add-minutes-input">
+            <button>Dodaj</button>
+           
+          </form>
+          <br>
+          <button id="reset-button">Resetuj licznik</button>
+        </article>
+      </div>
+      <div>
+        <h2>Linki</h2>
+        <article>
+        <ul id="links">
+          
+        </ul>
+        </article>
+        <div>
+          <h2>Notatki</h2>
+         <article>
+          
+          <p id="notes">
+          </p>
+          <textarea id="notes-textarea" cols="30" rows="10">Wpisz tekst, który chcesz zachować</textarea>
+          <button id="save-note">Zapisz notatkę</button>
+          <button id="delete-note">Usuń notatkę</button>
+         </article>
+        </div>
+      </div>
+      <div id="push"></div>
+      <div id="video">
+        <video controls width="450">
+
+          <source src="/src/instruction.webm"
+                  type="video/webm">
+
+      
+          Pobierz video
+          <a href="/src/instruction.webm">WEBM</a>
+
+      </video>
+      
+      </div>
+      <div id="footer">
+        <div class="container">
+          <p class="muted credit"> <a href="mailto:mateuszowczarek@onet.eu">Mateusz Owczarek</a></p>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
