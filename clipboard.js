@@ -1,3 +1,7 @@
+navigator.permissions.query({name: 'clipboard-write', allowWithoutGesture: false}).then(result => {
+	console.log(result.state)
+})
+
 const startMail = localStorage.getItem('start-mail');
 const endMail = localStorage.getItem('end-mail');
 
@@ -8,7 +12,7 @@ const dummyInDOM = (sourceToCopy) =>  {
 	dummyTextarea.select();
 	dummyTextarea.setSelectionRange(0,99999);
 	/*     document.execCommand("copy"); used to be that but now deprecated */
-	navigator.clipboard.writeText(dummyTextarea.value).then(document.body.removeChild(dummyTextarea)).then(alert('Saved e-mail to your clipboard.')).catch(e => {
+	navigator.clipboard.writeText(dummyTextarea.value).then(document.body.removeChild(dummyTextarea)).then(alert('Copied e-mail to clipboard.')).catch(e => {
 		console.error(e);
 		alert('Something went wrong, try again later.')
 	})
@@ -19,14 +23,13 @@ function copyToClipboard(mailVersion) {
 	switch (mailVersion) {
 		case 'end-mail':
 				const copyEndMail = localStorage.getItem('end-mail');
-				dummyInDOM(copyEndMail);				
+				setTimeout(() => {dummyInDOM(copyEndMail);}, 300)				
 			break;
 		case 'start-mail':
 				const copyStartMail = localStorage.getItem('start-mail');
-				dummyInDOM(copyStartMail);
+				setTimeout(() => {dummyInDOM(copyStartMail);}, 300)		
 			break;
 		default:
-			alert('Something went wrong. Save your e-mail and try again.')
 			console.error(`Something went wrong, try again later.`);
 	}
 	
