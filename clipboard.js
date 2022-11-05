@@ -16,6 +16,7 @@ function copyToClipboard(mailVersion) {
 		case 'end-mail':
 				const copyEndMail = localStorage.getItem('end-mail');
 				dummyInDOM(copyEndMail);	
+				
 			break;
 		case 'start-mail':
 				const copyStartMail = localStorage.getItem('start-mail');
