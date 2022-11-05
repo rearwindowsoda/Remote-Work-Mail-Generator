@@ -7,7 +7,8 @@ const dummyInDOM = (sourceToCopy) =>  {
 	dummyTextarea.value = sourceToCopy;
 	dummyTextarea.select();
 	dummyTextarea.setSelectionRange(0,99999);
-	    document.execCommand("copy");
+	document.execCommand("copy");
+	document.body.removeChild(dummyTextarea);
 
 }
 
