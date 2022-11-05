@@ -10,7 +10,11 @@ console.log(tomorrow);
 const tomorrowLocale = tomorrow.toLocaleDateString();
 const todayLocale = today.toLocaleDateString();
 
+/* Enable copy buttons after generating e-mails */
 
+const buttonEnabler = (selector, attribute) => {
+document.getElementById(selector).removeAttribute(attribute)
+}
 
 
 /* Inject date into work-start e-mail */
@@ -45,6 +49,7 @@ formStart.addEventListener('submit', (event) => {
 
   sendLinkStart.innerHTML = `<a href="mailto:${leaderMail}?subject=Rozpoczęcie Pracy Zdalnej - ${tomorrowLocale} r. - ${name}&body=${encodeURIComponent(`Dzień dobry,\ninformuję o rozpoczęciu pracy zdalnej w dniu ${tomorrowLocale} r.\nGodzina rozpoczęcia: ${workStartInput}.\nŁączę wyrazy szacunku,\n${name}`)}">Wyślij e-mail</a>
   `
+  buttonEnabler('button-copy-start', 'disabled');
 });
 
 /* Working with form end */
@@ -68,4 +73,5 @@ formEnd.addEventListener('submit', (event) => {
   const sendLinkEnd = document.getElementById('send-link-end');
   sendLinkEnd.innerHTML = `<a href="mailto:${leaderMail}?subject=Zakończenie Pracy Zdalnej - ${todayLocale} r. - ${name}&body=${encodeURIComponent(`Dzień dobry,\ninformuję o zakończeniu pracy zdalnej w dniu ${todayLocale} r.\nGodziny pracy: ${workStartInput}.\nKonwersja: ${conversion}\nŁączę wyrazy szacunku,\n${name}`)}" class="send-link">Wyślij e-mail</a>
   `
+  buttonEnabler('button-copy-end', 'disabled');
 });
