@@ -4,7 +4,7 @@ const uglify = require('gulp-uglify');
 const cleanCSS = require('gulp-clean-css')
 
 
-gulp.task('scripts', function() {
+gulp.task('minify-scripts', function() {
   return gulp.src('./*.js')
     // Minify the file
     .pipe(uglify())
@@ -12,7 +12,7 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('dist'))
 });
 
-gulp.task('minify', () => {
+gulp.task('minify-html', () => {
   return gulp.src('./*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('dist'));

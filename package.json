@@ -14,5 +14,9 @@
     "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
     "run-sequence": "^2.2.1"
-  }
+  },
+	"scripts": {
+	"start-lite-server": "lite-server",
+	"build": "gulp script minify minify-css"
+	}
 }
