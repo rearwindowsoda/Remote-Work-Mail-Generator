@@ -4,7 +4,7 @@ async function getLinks() {
 	 const links = await data.json()
 
 		 for await (const el of links){
-			 linksUl.innerHTML += `<li><a href="${el.link}">${el.desc}</a></li>`
+			 linksUl.innerHTML += `<li><a href="${el.link}" style="text-decoration: none; text-transform">${el.desc}</a></li>`
 		 }
 	 }
  

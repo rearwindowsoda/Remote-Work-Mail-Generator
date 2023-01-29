@@ -47,7 +47,7 @@ formStart.addEventListener('submit', (event) => {
   localStorage.setItem('start-mail', `Dzień dobry,\ninformuję o rozpoczęciu pracy zdalnej w dniu ${tomorrowLocale} r.\nGodzina rozpoczęcia: ${workStartInput}.\nŁączę wyrazy szacunku,\n${name}`);
   const sendLinkStart = document.getElementById('send-link-start');
 
-  sendLinkStart.innerHTML = `<a href="mailto:${leaderMail}?subject=Rozpoczęcie Pracy Zdalnej - ${tomorrowLocale} r. - ${name}&body=${encodeURIComponent(`Dzień dobry,\ninformuję o rozpoczęciu pracy zdalnej w dniu ${tomorrowLocale} r.\nGodzina rozpoczęcia: ${workStartInput}.\nŁączę wyrazy szacunku,\n${name}`)}">Wyślij e-mail</a>
+  sendLinkStart.innerHTML = `<a href="mailto:${leaderMail}?subject=Rozpoczęcie Pracy Zdalnej - ${tomorrowLocale} r. - ${name}&body=${encodeURIComponent(`Dzień dobry,\ninformuję o rozpoczęciu pracy zdalnej w dniu ${tomorrowLocale} r.\nGodzina rozpoczęcia: ${workStartInput}.\nŁączę wyrazy szacunku,\n${name}`)}" type="button" class="btn btn-outline-success">Wyślij e-mail</a>
   `
   buttonEnabler('button-copy-start', 'disabled');
 });
@@ -71,7 +71,7 @@ formEnd.addEventListener('submit', (event) => {
   conversionMail.innerHTML = `Konwersja: ${conversion} <br>`;
   localStorage.setItem('end-mail', `Dzień dobry,\ninformuję o zakończeniu pracy zdalnej w dniu ${todayLocale} r.\nGodziny pracy: ${workStartInput}.\nKonwersja: ${conversion}\nŁączę wyrazy szacunku,\n${name}`);
   const sendLinkEnd = document.getElementById('send-link-end');
-  sendLinkEnd.innerHTML = `<a href="mailto:${leaderMail}?subject=Zakończenie Pracy Zdalnej - ${todayLocale} r. - ${name}&body=${encodeURIComponent(`Dzień dobry,\ninformuję o zakończeniu pracy zdalnej w dniu ${todayLocale} r.\nGodziny pracy: ${workStartInput}.\nKonwersja: ${conversion}\nŁączę wyrazy szacunku,\n${name}`)}" class="send-link">Wyślij e-mail</a>
+  sendLinkEnd.innerHTML = `<a href="mailto:${leaderMail}?subject=Zakończenie Pracy Zdalnej - ${todayLocale} r. - ${name}&body=${encodeURIComponent(`Dzień dobry,\ninformuję o zakończeniu pracy zdalnej w dniu ${todayLocale} r.\nGodziny pracy: ${workStartInput}.\nKonwersja: ${conversion}\nŁączę wyrazy szacunku,\n${name}`)}" type="button" class="btn btn-outline-success">Wyślij e-mail</a>
   `
   buttonEnabler('button-copy-end', 'disabled');
 });

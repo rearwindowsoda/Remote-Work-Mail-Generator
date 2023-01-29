@@ -3,8 +3,7 @@ const htmlmin = require('gulp-htmlmin');
 const uglify = require('gulp-uglify');
 const cleanCSS = require('gulp-clean-css')
 
-
-gulp.task('minify-scripts', function() {
+gulp.task('uglify', function() {
   return gulp.src('./*.js')
     // Minify the file
     .pipe(uglify())
@@ -23,3 +22,14 @@ gulp.task('minify-css', () => {
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest('dist'));
 });
+
+gulp.task('move-links', () => {
+	return gulp.src('links.json')
+	.pipe(gulp.dest('dist'));
+})
+
+gulp.task('move-src', () => {
+	return gulp.src('src/**/*.*')
+	.pipe(gulp.dest('dist/src'));
+})
+gulp.task('default', gulp.series('uglify', 'minify-html', 'minify-css', 'move-links', 'move-src'));
