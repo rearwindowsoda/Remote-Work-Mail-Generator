@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"devDependencies": {
 		"del": "^7.0.0",
-		"gulp": "4.0.0",
+		"gulp": "^4.0.0",
 		"gulp-autoprefixer": "7.0.0",
 		"gulp-clean-css": "^4.3.0",
 		"gulp-htmlmin": "^5.0.1",
@@ -17,6 +17,6 @@
 	},
 	"scripts": {
 		"start-lite-server": "lite-server",
-		"build": "gulp minify-scripts minify-html minify-css"
+		"build": "gulp"
 	}
 }
